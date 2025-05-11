@@ -1,11 +1,11 @@
-FROM adoptopenjdk/openjdk11 
+FROM openjdk:17-alpine 
         
-EXPOSE 8080
+EXPOSE 8080 
  
 ENV APP_HOME /usr/src/app
 
-COPY target/*.jar $APP_HOME/app.jar
+COPY target/*.jar $APP_HOME/boardgame.jar
 
 WORKDIR $APP_HOME
 
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "boardgame.jar"]
